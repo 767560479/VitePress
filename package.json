@@ -13,7 +13,7 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "vitepress": "1.0.0-rc.10",
+    "vitepress": "1.0.0-alpha.49",
     "vue": "^3.2.47"
   },
   "pnpm": {
