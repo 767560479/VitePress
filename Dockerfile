@@ -6,7 +6,7 @@ WORKDIR /src
 
 RUN corepack enable && corepack prepare --all
 
-COPY ..
+COPY . .
 
 RUN yarn install
 
