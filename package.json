@@ -20,7 +20,9 @@
     "peerDependencyRules": {
       "ignoreMissing": [
         "@algolia/client-search",
-        "search-insights"
+        "search-insights",
+        "vitepress",
+        "vue"
       ]
     }
   }
