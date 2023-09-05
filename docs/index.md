@@ -22,6 +22,9 @@ features:
   - title: NodeJs
     details: node爬虫
     link: https://github.com/Yinzhuo19970516/vue-template
+  - title: Git
+    details: 常用的git命令
+    link: https://github.com/Yinzhuo19970516/vue-template
   - title: Python
     details: Python学习、爬虫例子
     link: https://github.com/Yinzhuo19970516/vue-template
