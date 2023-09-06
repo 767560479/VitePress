@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { getSideBar } from 'vitepress-plugin-autobar'
+import AutoIndex from "vite-plugin-vitepress-auto-index"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -13,8 +14,6 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [ //右侧头部导航
       { text: '主页', link: '/' },
-      { text: '例子', link: '/markdown-examples' },
-
     ],
      sidebar: getSideBar("./docs", {
       ignoreMDFiles: ['index'],
@@ -24,5 +23,11 @@ export default defineConfig({
     socialLinks: [//右上角图标和链接，icon 可用svg 配置
       { icon: 'github', link: 'https://gitee.com/gxtzf' }
     ]
+  },
+  vite: {
+    plugins: [{
+      ...AutoIndex({}),
+      enforce: 'pre',
+    }]
   }
 })
