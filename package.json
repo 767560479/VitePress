@@ -14,7 +14,6 @@
   "type": "module",
   "devDependencies": {
     "vitepress": "1.0.0-alpha.49",
-    "vitepress-plugin-autobar": "^1.0.8",
     "vue": "^3.2.47"
   },
   "pnpm": {
@@ -29,6 +28,7 @@
   },
   "dependencies": {
     "tslib": "^2.6.2",
-    "vite-plugin-vitepress-auto-index": "^1.1.12"
+    "vite-plugin-vitepress-auto-index": "^1.1.12",
+    "vite-plugin-vitepress-auto-sidebar": "^1.6.0"
   }
 }

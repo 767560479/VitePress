@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
-import { getSideBar } from 'vitepress-plugin-autobar'
 import AutoIndex from "vite-plugin-vitepress-auto-index"
+import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -14,20 +14,24 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [ //右侧头部导航
       { text: '主页', link: '/' },
+      { text: 'JavaScript', link: '/01.JavaScript/index' },
+      { text: 'NodeJs', link: '/02.NodeJs/index' },
+      { text: 'Python', link: '/03.Python/index' },
+      { text: 'Git', link: '/04.Git/index' },
+      { text: 'Vue', link: '/05.Vue/index' },
     ],
-     sidebar: getSideBar("./docs", {
-      ignoreMDFiles: ['index'],
-      ignoreDirectory: ['node_modules'],
-    }),//左侧导航
 
     socialLinks: [//右上角图标和链接，icon 可用svg 配置
       { icon: 'github', link: 'https://gitee.com/gxtzf' }
     ]
   },
   vite: {
-    plugins: [{
+    plugins: [
+      AutoSidebar({ignoreList: ['public'], createIndex: true}),
+      {
       ...AutoIndex({}),
       enforce: 'pre',
-    }]
+    }
+  ]
   }
 })
