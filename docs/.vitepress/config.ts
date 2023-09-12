@@ -14,11 +14,12 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [ //右侧头部导航
       { text: '主页', link: '/' },
-      { text: 'JavaScript', link: '/01.JavaScript/01.JavaScript' },
+      { text: 'JavaScript', link: '/01.JavaScript/index' },
       { text: 'NodeJs', link: '/02.NodeJs/index' },
-      { text: 'Python', link: '/03.Python/' },
+      { text: 'Python', link: '/03.Python/index' },
       { text: 'Git', link: '/04.Git/index' },
-      { text: 'Vue', link: '/05.Vue/05.Vue' },
+      { text: 'Vue', link: '/05.Vue/index' },
+      { text: 'CSS', link: '/06.CSS/index' },
     ],
 
     socialLinks: [//右上角图标和链接，icon 可用svg 配置
