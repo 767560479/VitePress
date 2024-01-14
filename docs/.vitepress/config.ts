@@ -13,7 +13,11 @@ export default defineConfig({
     aside: true,
     // outline设置为deep可以解析2-6层深度的标题嵌套
     outline: "deep",
+    outlineBadges: true,
     lastUpdatedText: '更新时间',
+    search: {
+      provider: 'local'
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [ //右侧头部导航
       { text: '主页', link: '/' },
