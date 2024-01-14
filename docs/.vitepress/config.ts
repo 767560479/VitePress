@@ -10,6 +10,9 @@ export default defineConfig({
     lineNumbers: true//md 加行号
   },
   themeConfig: {
+    aside: true,
+    // outline设置为deep可以解析2-6层深度的标题嵌套
+    outline: "deep",
     lastUpdatedText: '更新时间',
     // https://vitepress.dev/reference/default-theme-config
     nav: [ //右侧头部导航
