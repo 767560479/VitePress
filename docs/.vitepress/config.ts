@@ -15,9 +15,6 @@ export default defineConfig({
     outline: "deep",
     outlineBadges: true,
     lastUpdatedText: '更新时间',
-    search: {
-      provider: 'local'
-    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [ //右侧头部导航
       { text: '主页', link: '/' },
