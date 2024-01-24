@@ -1,22 +1,27 @@
 import { defineConfig } from 'vitepress'
-import AutoIndex from "vite-plugin-vitepress-auto-index"
-import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
+import AutoIndex from 'vite-plugin-vitepress-auto-index'
+import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar'
+import { pagefindPlugin } from 'vitepress-plugin-pagefind'
+
+
+
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "767560479 blog",
-  description: "A VitePress Site",
+  title: '767560479 blog',
+  description: 'A VitePress Site',
   markdown: {
-    lineNumbers: true//md 加行号
+    lineNumbers: true, //md 加行号
   },
   themeConfig: {
     aside: true,
     // outline设置为deep可以解析2-6层深度的标题嵌套
-    outline: "deep",
+    outline: 'deep',
     outlineBadges: true,
     lastUpdatedText: '更新时间',
     // https://vitepress.dev/reference/default-theme-config
-    nav: [ //右侧头部导航
+    nav: [
+      //右侧头部导航
       { text: '主页', link: '/' },
       { text: 'JavaScript', link: '/01.JavaScript/index' },
       { text: 'NodeJs', link: '/02.NodeJs/index' },
@@ -26,20 +31,23 @@ export default defineConfig({
       { text: 'CSS', link: '/06.CSS/index' },
       { text: 'Angular', link: '/07.Angular/index' },
       { text: 'React', link: '/08.React/index' },
+      { text: '笔记', link: '/笔记/index' },
     ],
 
-    socialLinks: [//右上角图标和链接，icon 可用svg 配置
+    socialLinks: [
+      //右上角图标和链接，icon 可用svg 配置
       { icon: 'github', link: 'https://gitee.com/gxtzf' },
-      { icon: 'linkedin', link: 'https://www.notion.so/tanzf/'}
-    ]
+      { icon: 'linkedin', link: 'https://www.notion.so/tanzf/' },
+    ],
   },
   vite: {
     plugins: [
-      AutoSidebar({ignoreList: ['public'], createIndex: true}),
+      AutoSidebar({ ignoreList: ['public'], createIndex: true }),
       {
-      ...AutoIndex({}),
-      enforce: 'pre',
-    }
-  ]
-  }
+        ...AutoIndex({}),
+        enforce: 'pre',
+      },
+      pagefindPlugin()
+    ],
+  },
 })

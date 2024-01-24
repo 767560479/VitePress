@@ -6,4 +6,6 @@
 - [05.Vue](./05.Vue/)
 - [06.CSS](./06.CSS/)
 - [07.Angular](./07.Angular/)
+- [08.React](./08.React/)
 - [public](./public/public.md)
+- [笔记](./笔记/笔记.md)
