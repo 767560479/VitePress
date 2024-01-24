@@ -24,10 +24,13 @@ export default defineConfig({
       { text: 'Git', link: '/04.Git/index' },
       { text: 'Vue', link: '/05.Vue/index' },
       { text: 'CSS', link: '/06.CSS/index' },
+      { text: 'Angular', link: '/07.Angular/index' },
+      { text: 'React', link: '/08.React/index' },
     ],
 
     socialLinks: [//右上角图标和链接，icon 可用svg 配置
-      { icon: 'github', link: 'https://gitee.com/gxtzf' }
+      { icon: 'github', link: 'https://gitee.com/gxtzf' },
+      { icon: 'linkedin', link: 'https://www.notion.so/tanzf/'}
     ]
   },
   vite: {
