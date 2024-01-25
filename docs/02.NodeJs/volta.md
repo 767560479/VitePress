@@ -4,7 +4,7 @@
  * @Date: 2024-01-24 14:23:12
  * @FilePath: \VitePress\docs\02.NodeJs\volta.md
  * @LastEditors: zhengfei.tan
- * @LastEditTime: 2024-01-24 14:40:27
+ * @LastEditTime: 2024-01-25 13:06:54
 -->
 
 
@@ -16,13 +16,32 @@
 
 > 可能会遇到下载失败或慢的问题，解决方案
 
-Node.js官网原话：版本进入当前版本状态六个月，这让库作者有时间添加对它们的支持。 六个月后，奇数版本（9、11 等）将不受支持，偶数版本（10、12 等）将变为活动 LTS 状态并可供常规使用。LTS 版本状态为“长期支持”，这通常保证关键 bug 将在总共 30 个月内得到修复。 生产应用程序应仅使用活动 LTS 或维护 LTS 版本。
+官网安装地址：volta官网安装地址
+https://docs.volta.sh/guide/getting-started
+
+新建系统变量
+
+![环境](./public/image.png)
+
+在系统变量中找到path，编辑替换volta默认的位置为%VOLTA_HOME%
+
+修改用户环境变量path中的votal路径替换为%VOLTA_HOME%\bin
+
+
 
 根据 Node.js 官网我们得知：每个版本的偶数版本是LTS稳定版，打开以前的版本(nodejs.org)官网辨别每个大版本的稳定版，复制版本号去清华大学开源软件镜像站中 ctrl+f 搜索并点击下载对应的node-vxx.xx.xx-win-64.zip (以win举例，mac | linux自行选择)
 
-下载完成后放到C:\Users\story\AppData\Local\Volta\tools\inventory\node目录中，再次运行并指定压缩包上的版本即可将此版本作为默认版本(还是不行的重启电脑再次执行)
+node下载地址：node下载地址
+https://registry.npmmirror.com/binary.html?path=node
+
+![ndoe-weizhi](./public/ndoe-weizhi.png.png)
+
+
+下好放到你的安装目录x:\Volta\tools\inventory\node
 
 > volta install node@xx.xx.xx
+
+
 
 安装完成后每个node版本中都有对应的npm，你也可以安装yarn和pnpm
 
@@ -94,3 +113,4 @@ pnpm 修改缓存位置(缓存依赖)
 
 pnpm 查看配置
 > pnpm config list
+
