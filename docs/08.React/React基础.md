@@ -4,14 +4,14 @@
  * @Date: 2024-01-11 21:38:28
  * @FilePath: \VitePress\docs\08.React\React基础.md
  * @LastEditors: zhengfei.tan
- * @LastEditTime: 2024-02-01 16:45:46
+ * @LastEditTime: 2024-02-02 10:30:21
 -->
 
 # 07.React
 
 ## React 绑定*this*,常见解决办法
 
-1. 在render方法种使用箭头函数
+1. 在 render 方法种使用箭头函数
    在 React 中，使用箭头函数来绑定 this 是常见做法。这是因为箭头函数会自动将 this 绑定到定义时的上下文。这样可以避免手动绑定*this*的问题。
    例如：
 
@@ -62,7 +62,7 @@ class App extends React.Component {
 
 ```js
 class App extends React.Component {
-  handleClick = () =>{
+  handleClick = () => {
     console.log('this > ', this)
   }
   render() {
@@ -96,9 +96,9 @@ React 生命周期是指 React 组件从创建到销毁的过程。在 React 16 
 
 ```
 
-## react更新触发生命周期
+## react 更新触发生命周期
 
-当React子组件发生改变时，父组件可能会触发以下生命周期方法：
+当 React 子组件发生改变时，父组件可能会触发以下生命周期方法：
 
 ```
 1. componentWillReceiveProps(nextProps)
@@ -165,6 +165,7 @@ React 生命周期是指 React 组件从创建到销毁的过程。在 React 16 
     });
   }
 ```
+
 ### 更新阶段
 
 ```javaScript
@@ -173,7 +174,7 @@ React 生命周期是指 React 组件从创建到销毁的过程。在 React 16 
   UNSAFE_componentWillReceiveProps(nextProps) {
     console.log(nextProps);
   }
-  
+
 //决定子组件是否重新渲染
 // 必须要返回true或者false, 通过返回true或者false来控制是否要重新渲染当前组件
 // 可以接收两个参数，新的props和新的state，旧的还是this.props.xxx
@@ -181,17 +182,17 @@ React 生命周期是指 React 组件从创建到销毁的过程。在 React 16 
 shouldComponentUpdate(nextProps, nextState) {
     return nextState.count !== this.state.count;
   }
-  
+
 // 被弃用
   UNSAFE_componentWillUpdate() {
     console.log("componentWillUpdate");
   }
-   
+
 // 更新结束
 // 不能在这里更新数据
   componentDidUpdate() {
     console.log("componentDidUpdate");
-  } 
+  }
 
 ```
 
@@ -209,7 +210,6 @@ componentWillUnmount() {
 ## 类组件的生命周期-新版
 
 ![新版生命周期](public/image-1.png)
-
 
 ### getDerivedStateFromProps
 
@@ -232,23 +232,16 @@ static getDerivedStateFromProps(props, state) {
     // 快照就是某一条记录或者某一个值，return出来被销毁周期接收
     return prevState;
   }
-  
+
 // componentDidUpdate第三个参数就是getSnapshotBeforeUpdate里面return的那个值
   componentDidUpdate(prevProps, prevState, snapshot) {
     console.log(snapshot);
   }
 ```
 
-
-
-
-
-
 ## React 中的高阶组件
 
 高阶组件（HOC）是 React 中的一种高级组件设计模式，它是一种用于组件复用的函数。高阶组件接收一个组件作为参数，并返回一个新的组件。高阶组件可以用于封装通用逻辑、状态管理、组件组合等。
-
-
 
 ## React 中的 refs
 
@@ -259,7 +252,7 @@ refs 是 React 中用于访问 DOM 元素或组件实例的属性。通过在组
 
 React 中的事件处理与 DOM 中的事件处理类似。通过在组件中定义事件处理函数，并在事件发生时调用该函数，可以实现事件处理。在事件处理函数中，可以通过 event 对象访问事件的相关信息，例如事件类型、目标元素等。
 
-## 对React看法，它的优缺点
+## 对 React 看法，它的优缺点
 
 React 的优点：
 
@@ -274,15 +267,13 @@ React 的缺点：
 - 性能优化难度大：React 的性能优化难度较大，需要使用一些性能优化工具和最佳实践来提高应用程序的性能。
 - 社区生态尚待完善：React 的社区生态尚待完善，需要等待更多的第三方库和工具的出现。
 
-## React的理念是什么（拿函数式编程来做页面渲染）
+## React 的理念是什么（拿函数式编程来做页面渲染）
 
 ```
 React 是一个用于构建用户界面的 JavaScript 库。它使用虚拟 DOM 和函数式编程的概念来优化页面的渲染性能。
 ```
 
-
-
-## React虚拟DOM（Virtual DOM）
+## React 虚拟 DOM（Virtual DOM）
 
 React 的虚拟 DOM 是一个 JavaScript 对象，它表示真实 DOM 树的结构和属性。React 将真实 DOM 树的状态保存在虚拟 DOM 对象中，并在需要时更新真实 DOM 树的状态。这样，React 就可以在保证性能的同时，实现页面的快速更新。
 
@@ -298,7 +289,7 @@ React通过虚拟DOM树的比较，避免了直接操作真实DOM树带来的性
 总结起来，React虚拟DOM的原理就是：通过比较虚拟DOM树的不同，批量的更新真实的DOM树，从而提高页面的性能。
 ```
 
-## React的diff算法
+## React 的 diff 算法
 
 ```
 React Diff是React中用于更新Virtual DOM的算法它的目的是在最小化DOM操作的同时，尽可能快地更新组件。它通过比较Virtual DOM树的前后两个状态来确定哪些部分需要更新。
@@ -326,4 +317,3 @@ React Diff算法的时间复杂度是O(n)，其中n为Virtual DOM树中节点的
 因此，React只需要比较这两个元素的差异，并进行相应的DOM操作，这通常比重新计算整个数组的差异要更高效。
 
 ```
-
