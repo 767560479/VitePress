@@ -10,6 +10,7 @@ import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 export default defineConfig({
   title: '767560479 blog',
   description: 'A VitePress Site',
+  lastUpdated: true,
   markdown: {
     lineNumbers: true, //md 加行号
   },
