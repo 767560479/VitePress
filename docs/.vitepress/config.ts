@@ -8,7 +8,7 @@ import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: '767560479 blog',
+  title: '写bug的F blog',
   description: 'A VitePress Site',
   lastUpdated: true,
   markdown: {
