@@ -7,5 +7,5 @@
 - [06.CSS](./06.CSS/)
 - [07.Angular](./07.Angular/)
 - [08.React](./08.React/)
+- [note](./note/)
 - [public](./public/public.md)
-- [笔记](./笔记/笔记.md)
