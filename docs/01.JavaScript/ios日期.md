@@ -1,4 +1,4 @@
-# 没有日的日期在 iOS 中报 Invalid Date 的探究-蚊子-前端博客
+# 没有日的日期在 iOS 中报 Invalid Date 的探究
 
 > ## Excerpt
 >
