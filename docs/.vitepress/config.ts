@@ -32,7 +32,7 @@ export default defineConfig({
       { text: 'CSS', link: '/06.CSS/index' },
       { text: 'Angular', link: '/07.Angular/index' },
       { text: 'React', link: '/08.React/index' },
-      { text: '笔记', link: '/note/note' },
+      { text: '笔记', link: '/note/index' },
     ],
 
     socialLinks: [
