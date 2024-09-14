@@ -8,7 +8,7 @@ import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: '写bug的F blog',
+  title: '记录bug blog',
   description: 'A VitePress Site',
   lastUpdated: true,
   markdown: {
@@ -37,7 +37,7 @@ export default defineConfig({
 
     socialLinks: [
       //右上角图标和链接，icon 可用svg 配置
-      { icon: 'github', link: 'https://gitee.com/gxtzf' },
+      { icon: 'github', link: 'https://github.com/767560479' },
       { icon: 'linkedin', link: 'https://www.notion.so/tanzf/' },
     ],
   },

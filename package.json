@@ -29,7 +29,7 @@
   "dependencies": {
     "tslib": "^2.6.2",
     "vite-plugin-vitepress-auto-index": "^1.1.12",
-    "vite-plugin-vitepress-auto-sidebar": "^1.6.0",
+    "vite-plugin-vitepress-auto-sidebar": "^1.7.0",
     "vitepress-plugin-pagefind": "^0.2.10"
   },
   "volta": {
