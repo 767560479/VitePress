@@ -2,9 +2,9 @@
  * @Description:
  * @Author: zhengfei.tan
  * @Date: 2024-07-04 19:25:16
- * @FilePath: \VitePress\docs\01.JavaScript\isNaN 和 Number.isNaN.md
- * @LastEditors: zhengfei.tan
- * @LastEditTime: 2024-07-04 19:27:27
+ * @FilePath: \VitePress\docs\01.JavaScript\isNaN和Number.isNaN.md
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2024-09-18 15:12:16
 -->
 
 # isNaN 和 Number.isNaN

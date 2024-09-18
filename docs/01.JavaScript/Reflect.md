@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: zhengfei.tan
  * @Date: 2024-01-15 23:05:08
  * @FilePath: \VitePress\docs\01.JavaScript\Reflect.md
@@ -24,8 +24,8 @@ Reflect 对象与 Proxy 对象一样，也是 ES6 为了操作对象而提供的
 ```js
 // 老写法
 try {
-  Object.defineProperty(target, property, attributes);
-} catch (e) { 
+  Object.defineProperty(target, property, attributes)
+} catch (e) {
   // ...
 }
 
@@ -39,16 +39,16 @@ if (Reflect.defineProperty(target, property, attributes)) {
 
 ## 2. Reflect.get()
 
-Reflect.get()方法查找并返回target对象的name属性，如果没有该属性，则返回undefined。
+Reflect.get()方法查找并返回 target 对象的 name 属性，如果没有该属性，则返回 undefined。
 
 ```js
 var myObject = {
   foo: 1,
   bar: 2,
   get baz() {
-    return this.foo + this.bar;
+    return this.foo + this.bar
   },
-};
+}
 
 Reflect.get(myObject, 'foo') // 1
 Reflect.get(myObject, 'bar') // 2
@@ -56,26 +56,26 @@ Reflect.get(myObject, 'baz') // 3
 Reflect.get(myObject, 'quux') // undefined
 ```
 
-Reflect.get()方法可以接受第二个参数，用来绑定this。
+Reflect.get()方法可以接受第二个参数，用来绑定 this。
 
 ```js
 const myObject = {
   foo: 1,
   bar: 2,
   get baz() {
-    return this.foo + this.bar;
+    return this.foo + this.bar
   },
-};
+}
 
 const myReceiverObject = {
   foo: 4,
   bar: 4,
-};
+}
 
 Reflect.get(myObject, 'baz', myReceiverObject) // 8
 ```
 
-上面代码中，myReceiverObject对象是baz属性的this对象，所以baz的返回值是4+4。
+上面代码中，myReceiverObject 对象是 baz 属性的 this 对象，所以 baz 的返回值是 4+4。
 
 如果第一个参数不是对象，Reflect.get()会报错。
 
@@ -86,60 +86,58 @@ Reflect.get(false, 'foo') // 报错
 
 ## 3. Reflect.set()
 
-Reflect.set()方法设置target对象的name属性等于value。
+Reflect.set()方法设置 target 对象的 name 属性等于 value。
 
 ```js
 var myObject = {
   foo: 1,
   set bar(value) {
-    return this.foo = value;
+    return (this.foo = value)
   },
-};
+}
 
 myObject.foo // 1
 
-Reflect.set(myObject, 'foo', 2);
+Reflect.set(myObject, 'foo', 2)
 myObject.foo // 2
 
 Reflect.set(myObject, 'bar', 3)
 myObject.foo // 3
 ```
 
-如果 Proxy对象和Reflect对象联合使用，前者拦截赋值操作，后者完成赋值操作。
+如果 Proxy 对象和 Reflect 对象联合使用，前者拦截赋值操作，后者完成赋值操作。
 
 ```js
 var handler = {
   set(target, name, value, receiver) {
-    var success = Reflect.set(target, name, value, receiver);
+    var success = Reflect.set(target, name, value, receiver)
     if (success) {
-      console.log('property ' + name + ' on ' + target + ' set to ' + value);
+      console.log('property ' + name + ' on ' + target + ' set to ' + value)
     }
-    return success;
+    return success
   },
-};
+}
 
-var target = {};
-var proxy = new Proxy(target, handler);
+var target = {}
+var proxy = new Proxy(target, handler)
 
 proxy.foo = 'bar'
 // 输出：
 // property foo on Proxy set to bar
 ```
 
-上面代码中，Proxy.set()方法拦截了target对象的赋值操作，赋值操作执行的是Reflect.set()。
+上面代码中，Proxy.set()方法拦截了 target 对象的赋值操作，赋值操作执行的是 Reflect.set()。
 
-Reflect.set()的返回值就是success。
-
-
+Reflect.set()的返回值就是 success。
 
 ## 4. Reflect.has()
 
-Reflect.has()方法对应name in obj里面的in运算符。
+Reflect.has()方法对应 name in obj 里面的 in 运算符。
 
 ```js
 var myObject = {
   foo: 1,
-};
+}
 
 // 旧写法
 'foo' in myObject // true
@@ -155,7 +153,7 @@ var myObject = {
   foo: 1,
   bar: undefined,
   [Symbol('baz')]: 42,
-};
+}
 
 // 旧写法
 'foo' in myObject // true
@@ -168,41 +166,35 @@ Reflect.has(myObject, 'bar') // true
 Reflect.has(myObject, 'baz') // true
 ```
 
-
-
 ## 5. Reflect.deleteProperty()
 
-Reflect.deleteProperty()方法等同于delete obj[name]，用于删除对象的属性。
+Reflect.deleteProperty()方法等同于 delete obj[name]，用于删除对象的属性。
 
 ```js
-const myObj = {
-};
+const myObj = {}
 
 Object.defineProperty(myObj, 'hidden', {
   value: true,
   enumerable: false,
-});
+})
 
 myObj.hidden // true
 Reflect.deleteProperty(myObj, 'hidden') // true
 myObj.hidden // undefined
 ```
 
-上面代码中，myObj对象的hidden属性是只读的，Object.defineProperty()无法删除该属性，但是Reflect.deleteProperty()可以做到。
-
-
+上面代码中，myObj 对象的 hidden 属性是只读的，Object.defineProperty()无法删除该属性，但是 Reflect.deleteProperty()可以做到。
 
 ## 6. Reflect.construct()
 
-Reflect.construct()方法等同于new target(...args)，这提供了一种不使用new，来调用构造函数的方法。 
-
+Reflect.construct()方法等同于 new target(...args)，这提供了一种不使用 new，来调用构造函数的方法。
 
 ## 7. Reflect.getPrototypeOf()
 
-Reflect.getPrototypeOf()方法用于读取对象的__proto__属性，对应Object.getPrototypeOf()方法。
+Reflect.getPrototypeOf()方法用于读取对象的**proto**属性，对应 Object.getPrototypeOf()方法。
 
 ```js
-const myObj = new FancyThing();
+const myObj = new FancyThing()
 
 // 旧写法
 Object.getPrototypeOf(myObj) === FancyThing.prototype // true
@@ -211,14 +203,12 @@ Object.getPrototypeOf(myObj) === FancyThing.prototype // true
 Reflect.getPrototypeOf(myObj) === FancyThing.prototype // true
 ```
 
-
-
 ## 8. Reflect.setPrototypeOf()
 
-Reflect.setPrototypeOf()方法用于设置对象的__proto__属性，返回第一个参数对象。它相当于Object.setPrototypeOf(obj, newProto)，用来设置一个对象的原型（prototype）对象，返回第一个参数对象。
+Reflect.setPrototypeOf()方法用于设置对象的**proto**属性，返回第一个参数对象。它相当于 Object.setPrototypeOf(obj, newProto)，用来设置一个对象的原型（prototype）对象，返回第一个参数对象。
 
 ```js
-const myObj = new FancyThing();
+const myObj = new FancyThing()
 
 // 旧写法
 Object.setPrototypeOf(myObj, anotherObj) === myObj // true
@@ -227,17 +217,16 @@ Object.setPrototypeOf(myObj, anotherObj) === myObj // true
 Reflect.setPrototypeOf(myObj, anotherObj) === myObj // true
 ```
 
-
-
 ## 9. Reflect.apply()
 
-Reflect.apply()方法等同于Function.prototype.apply.call(func, thisArg, args)，用于绑定this对象后执行给定函数。 
+Reflect.apply()方法等同于 Function.prototype.apply.call(func, thisArg, args)，用于绑定 this 对象后执行给定函数。
 
 ## 10. Reflect.ownKeys()
 
 是 JavaScript 中的一个内置方法，它用于获取一个对象的所有属性键（包括原型链上的属性）。这个方法在 JavaScript 的 ECMAScript 6（ES6）中引入，并在后续的版本中得到了扩展。
 
 Reflect.ownKeys 方法的语法如下：
+
 ```js
 Reflect.ownKeys(target)
 ```
@@ -245,6 +234,3 @@ Reflect.ownKeys(target)
 其中，target 参数是要获取所有属性键的对象。
 
 Reflect.ownKeys 方法返回一个包含对象所有属性键的数组。
-
-
-

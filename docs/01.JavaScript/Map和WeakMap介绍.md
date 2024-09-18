@@ -2,12 +2,14 @@
  * @Description:
  * @Author: zhengfei.tan
  * @Date: 2024-08-05 17:44:13
- * @FilePath: \VitePress\docs\01.JavaScript\Map 和 WeakMap介绍.md
+ * @FilePath: \VitePress\docs\01.JavaScript\Map和WeakMap介绍.md
 -->
+
+# Map 和 WeakMap 介绍
 
 Map 和 WeakMap 是 JavaScript 中的两种集合类型，它们提供了存储键值对的方式，但它们之间有一些关键的区别和不同的使用场景。
 
-### Map
+## Map
 
 1. **定义**：Map 是一个集合，可以存储键值对的有序列表。键可以是任何类型的值。
 2. **特性**：
@@ -15,7 +17,7 @@ Map 和 WeakMap 是 JavaScript 中的两种集合类型，它们提供了存储�
    - 键可以是任何类型，包括对象、函数、甚至另一个 Map。
    - 提供了丰富的 API，例如 `set`, `get`, `has`, `delete`, `clear` 和 `size`。
 
-### WeakMap
+## WeakMap
 
 1. **定义**：WeakMap 是一个集合，同样可以存储键值对，但它的键必须是对象引用，并且这些引用是弱引用。
 2. **特性**：

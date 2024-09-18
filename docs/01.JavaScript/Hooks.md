@@ -5,6 +5,8 @@
  * @FilePath: \VitePress\docs\01.JavaScript\Hooks.md
 -->
 
+# Hooks
+
 ## 取消无限 debugger
 
 ```js
