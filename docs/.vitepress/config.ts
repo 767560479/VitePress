@@ -1,13 +1,16 @@
 import { defineConfig } from 'vitepress'
-import AutoIndex from 'vite-plugin-vitepress-auto-index'
+import AutoIndex from './vitepress-plugin-auto-index/index'
 import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
-
-
-
+// 导入生成配置工具方法 //
+import { getThemeConfig } from '@sugarat/theme/node'
+// 主题独有配置，所有配置项，详见文档: https://theme.sugarat.top/ //
+const blogTheme = getThemeConfig({})
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  // 继承博客主题配置 //
+  extends: blogTheme, // 插件 //
   title: '记录bug blog',
   description: 'A VitePress Site',
   lastUpdated: true,
@@ -43,12 +46,12 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      AutoSidebar({ ignoreList: ['public'], createIndex: true }),
+      // AutoSidebar({ ignoreList: ['public'], createIndex: true }),
       {
         ...AutoIndex({}),
         enforce: 'pre',
       },
-      pagefindPlugin()
+      pagefindPlugin(),
     ],
   },
 })
