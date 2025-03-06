@@ -5,7 +5,91 @@ import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 // 导入生成配置工具方法 //
 import { getThemeConfig } from '@sugarat/theme/node'
 // 主题独有配置，所有配置项，详见文档: https://theme.sugarat.top/ //
-const blogTheme = getThemeConfig({})
+const blogTheme = getThemeConfig({
+  author: 'tzf',
+  homeTags: true,
+  hotArticle: {
+    title: '🔥 精选文章',
+    nextText: '换一组',
+    pageSize: 12,
+    empty: '暂无精选内容',
+  },
+  friend: {
+    list: [
+
+      {
+        nickname: '李年糕',
+        des: '佛系的打工人',
+        avatar: 'https://cdn.upyun.sugarat.top/mdImg/sugar/617be739258b761b7dfed4fa0869326c',
+        url: 'https://rimochiko.github.io/',
+      },
+      {
+        nickname: '冴羽',
+        des: '冴羽的博客',
+        avatar: 'https://cdn.upyun.sugarat.top/avatar/blog/mqyqingfeng.png',
+        url: 'https://yayujs.com/',
+      },
+      {
+        nickname: '张成威的网络日志',
+        des: '知不足而奋进，望远山而前行',
+        avatar: 'https://cdn.upyun.sugarat.top/avatar/blog/zhangchengwei.png',
+        url: 'https://www.zhangchengwei.work',
+      },
+      {
+        url: 'https://leelaa.cn',
+        avatar: 'https://cdn.upyun.sugarat.top/avatar/blog/leelaa.png',
+        des: '肯了个德的博客',
+        nickname: 'LEEDAISEN',
+      },
+      {
+        nickname: '博友圈',
+        des: '独立博客人的专属朋友圈！',
+        avatar: 'https://cdn.upyun.sugarat.top/mdImg/sugar/bdee5d11a1e036ca3634943d34469f59',
+        url: 'https://www.boyouquan.com/home',
+      },
+      {
+        nickname: 'Simon He',
+        des: '除了coding，我什么都不会',
+        avatar: 'https://cdn.upyun.sugarat.top/avatar/blog/simonme.png',
+        url: 'https://simonme.netlify.app/',
+      },
+      {
+        nickname: 'laiky',
+        des: '一名全栈开发工程师，.NET全栈经验',
+        avatar: 'https://cdn.upyun.sugarat.top/avatar/blog/llxz.png',
+        url: 'http://llxz.top/',
+      },
+      {
+        nickname: '粥里有勺糖',
+        des: '粥里有勺糖',
+        avatar: 'https://cdn.upyun.sugarat.top/avatar/blog/zlyst-avatar.jpeg',
+        url: 'https://sugarat.top/',
+      },
+      {
+        nickname: 'Hacxy Blog',
+        des: '指尖改变命运😋',
+        avatar: 'https://hacxy.cn/logo.png',
+        url: 'https://hacxy.cn',
+      },
+    ].map(v => {
+      if (v.avatar.includes('//cdn.upyun.sugarat.top')) {
+        v.avatar = `${v.avatar}-wh50`
+      }
+      return v
+    }),
+    random: true,
+    limit: 6,
+  },
+  search: {
+    showDate: true,
+    pageResultCount: 4,
+  },
+  recommend: {
+    showSelf: true,
+    nextText: '下一页',
+    style: 'sidebar'
+  },
+})
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({

@@ -15,7 +15,9 @@
   "devDependencies": {
     "@types/node": "^22.13.9",
     "vitepress": "1.0.0-alpha.49",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "rimraf": "^6.0.1",
+    "picocolors": "^1.1.1"
   },
   "pnpm": {
     "peerDependencyRules": {
@@ -33,11 +35,8 @@
     "element-plus": "^2.9.5",
     "moment": "^2.30.1",
     "pagefind": "^1.3.0",
-    "picocolors": "^1.1.1",
-    "rimraf": "^6.0.1",
     "sass": "^1.85.1",
     "tslib": "^2.6.2",
-    "vite-plugin-vitepress-auto-index": "^1.1.12",
     "vite-plugin-vitepress-auto-sidebar": "^1.7.0",
     "vitepress-plugin-pagefind": "^0.2.10"
   },
