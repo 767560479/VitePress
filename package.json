@@ -33,6 +33,6 @@
     "vitepress-plugin-pagefind": "^0.2.10"
   },
   "volta": {
-    "node": "16.20.2"
+    "node": "20.14.0"
   }
 }
