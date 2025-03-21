@@ -16,7 +16,12 @@ const blogTheme = getThemeConfig({
   },
   friend: {
     list: [
-
+      {
+        nickname: '前端双越老师',
+        des: '本名王福朋。前百度、滴滴 前端工程师',
+        avatar: 'https://p6-passport.byteacctimg.com/img/user-avatar/ed902d900835e2e7e3fdfa57fdeb309b~90x90.awebp',
+        url: 'https://juejin.cn/user/1714893868765373',
+      },
       {
         nickname: '李年糕',
         des: '佛系的打工人',
