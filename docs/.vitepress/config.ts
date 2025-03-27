@@ -19,7 +19,8 @@ const blogTheme = getThemeConfig({
       {
         nickname: '前端双越老师',
         des: '本名王福朋。前百度、滴滴 前端工程师',
-        avatar: 'https://p6-passport.byteacctimg.com/img/user-avatar/ed902d900835e2e7e3fdfa57fdeb309b~90x90.awebp',
+        avatar:
+          'https://p6-passport.byteacctimg.com/img/user-avatar/ed902d900835e2e7e3fdfa57fdeb309b~90x90.awebp',
         url: 'https://juejin.cn/user/1714893868765373',
       },
       {
@@ -92,7 +93,7 @@ const blogTheme = getThemeConfig({
   recommend: {
     showSelf: true,
     nextText: '下一页',
-    style: 'sidebar'
+    style: 'sidebar',
   },
 })
 
@@ -111,19 +112,28 @@ export default defineConfig({
     // outline设置为deep可以解析2-6层深度的标题嵌套
     outline: 'deep',
     outlineBadges: true,
-    lastUpdatedText: '更新时间',
+    lastUpdatedText: '上次更新于',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       //右侧头部导航
       { text: '主页', link: '/' },
       { text: 'JavaScript', link: '/01.JavaScript/index' },
-      { text: 'NodeJs', link: '/02.NodeJs/index' },
-      { text: 'Python', link: '/03.Python/index' },
-      { text: 'Git', link: '/04.Git/index' },
       { text: 'Vue', link: '/05.Vue/index' },
-      { text: 'CSS', link: '/06.CSS/index' },
-      { text: 'Angular', link: '/07.Angular/index' },
-      { text: 'React', link: '/08.React/index' },
+      {
+        text: '源码学习',
+        items: [{ text: 'VueUse', link: '/VueuseSource/index' }],
+      },
+      {
+        text: '前端技术笔记',
+        items: [
+          { text: 'NodeJs', link: '/02.NodeJs/index' },
+          { text: 'CSS', link: '/06.CSS/index' },
+          { text: 'Angular', link: '/07.Angular/index' },
+          { text: 'React', link: '/08.React/index' },
+          { text: 'Python', link: '/03.Python/index' },
+          { text: 'Git', link: '/04.Git/index' },
+        ],
+      },
       { text: '笔记', link: '/note/index' },
     ],
 

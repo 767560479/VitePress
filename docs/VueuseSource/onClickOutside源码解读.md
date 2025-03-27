@@ -21,7 +21,7 @@ categories:
  * @FilePath: \VitePress\docs\SourceCodeAnalysis\vueuse\onClickOutside 源码解读.md
 -->
 
-# VueUse `onClickOutside` 源码解读
+# VueUse`onClickOutside`源码解读
 
 在前端开发中，我们经常需要检测用户是否点击了某个元素外部的区域，例如关闭下拉菜单、模态框等场景。VueUse 提供了一个强大且易用的工具函数 `onClickOutside`，用于监听元素外的点击事件。本文将深入剖析其源码，带你理解它的实现原理和关键细节。
 

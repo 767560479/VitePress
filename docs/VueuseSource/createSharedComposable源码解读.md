@@ -21,7 +21,7 @@ categories:
  * @FilePath: \VitePress\docs\SourceCodeAnalysis\vueuse\createSharedComposable 源码解读.md
 -->
 
-# VueUse `createSharedComposable` 源码解读
+# VueUse`createSharedComposable`源码解读
 
 在 Vue 的开发中，组合式函数（Composables）是实现逻辑复用的核心工具。然而，有时我们需要在多个组件或实例之间共享同一个组合式函数的状态和副作用，而不希望每次调用都创建新的实例。VueUse 提供的 `createSharedComposable` 正是为此设计的工具。本文将深入剖析其源码，探索它的实现细节和应用价值。
 
