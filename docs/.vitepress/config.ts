@@ -140,7 +140,7 @@ export default defineConfig({
     socialLinks: [
       //右上角图标和链接，icon 可用svg 配置
       { icon: 'github', link: 'https://github.com/767560479' },
-      { icon: 'linkedin', link: 'https://www.notion.so/tanzf/' },
+      // { icon: 'linkedin', link: 'https://www.notion.so/tanzf/' },
     ],
   },
   vite: {
