@@ -33,7 +33,7 @@ categories:
 `useElementBounding` 接受两个参数：
 
 - **target**：通过 `MaybeComputedElementRef` 类型支持响应式元素引用（如 `ref` 或 `computed` 返回值）
-- **options**：配置对象，包含重置策略、窗口事件监听等（后文详述）[1](@ref)[5](@ref)
+- **options**：配置对象，包含重置策略、窗口事件监听等（后文详述）
 
 返回一个包含 8 个响应式属性和 `update` 方法的对象：
 
@@ -51,15 +51,15 @@ categories:
 
 源码核心流程如下：
 
-1. **初始化状态**：通过 `window.getBoundingClientRect()` 获取初始边界值[1](@ref)[5](@ref)
+1. **初始化状态**：通过 `window.getBoundingClientRect()` 获取初始边界值
 2. **元素监听**：
    - 使用 `watch` 监听 `target` 变化，自动重新绑定监听器
-   - 通过 `useResizeObserver` 监听元素尺寸变化触发更新[5](@ref)
+   - 通过 `useResizeObserver` 监听元素尺寸变化触发更新
 3. **窗口事件**：
-   - 根据 `windowResize` 和 `windowScroll` 配置，动态绑定 `resize` 和 `scroll` 事件[1](@ref)[5](@ref)
+   - 根据 `windowResize` 和 `windowScroll` 配置，动态绑定 `resize` 和 `scroll` 事件
 4. **性能优化**：
    - 通过 `requestAnimationFrame` 控制更新频率
-   - 支持 `updateTiming: 'next-frame'` 延迟更新，避免与布局抖动冲突[1](@ref)
+   - 支持 `updateTiming: 'next-frame'` 延迟更新，避免与布局抖动冲突
 
 ---
 
@@ -79,22 +79,22 @@ const update = () => {
 }
 ```
 
-每次更新触发 `getBoundingClientRect()`，但通过 `ShallowRef` 优化引用类型性能[1](@ref)[5](@ref)
+每次更新触发 `getBoundingClientRect()`，但通过 `ShallowRef` 优化引用类型性能
 
 #### 2. 生命周期管理
 
 - **卸载重置**：当 `options.reset=true` 时，组件卸载后所有属性归零
-- **事件解绑**：自动清理 `resize`/`scroll` 监听器，避免内存泄漏[1](@ref)[5](@ref)
+- **事件解绑**：自动清理 `resize`/`scroll` 监听器，避免内存泄漏
 
 #### 3. 配置项详解
 
-| 选项           | 默认值 | 说明                                                            |
-| -------------- | ------ | --------------------------------------------------------------- |
-| `reset`        | true   | 组件卸载时重置边界值为 0                                        |
-| `windowResize` | true   | 监听窗口 resize 事件                                            |
-| `windowScroll` | true   | 监听窗口 scroll 事件                                            |
-| `immediate`    | true   | 初始化立即计算边界                                              |
-| `updateTiming` | 'sync' | 更新时机（'sync' 立即 / 'next-frame' 下一帧）[1](@ref)[5](@ref) |
+| 选项           | 默认值 | 说明                                          |
+| -------------- | ------ | --------------------------------------------- |
+| `reset`        | true   | 组件卸载时重置边界值为 0                      |
+| `windowResize` | true   | 监听窗口 resize 事件                          |
+| `windowScroll` | true   | 监听窗口 scroll 事件                          |
+| `immediate`    | true   | 初始化立即计算边界                            |
+| `updateTiming` | 'sync' | 更新时机（'sync' 立即 / 'next-frame' 下一帧） |
 
 ---
 
@@ -145,7 +145,7 @@ const update = () => {
 
 ### 四、最佳实践与注意事项
 
-1. **性能敏感场景**建议关闭 `windowScroll`，改用 `IntersectionObserver`[5](@ref)
+1. **性能敏感场景**建议关闭 `windowScroll`，改用 `IntersectionObserver`
 2. **动态元素**需配合 `watch` 监听元素引用变化：
 
 ```javascript
@@ -154,8 +154,8 @@ watch(targetEl, newEl => {
 })
 ```
 
-3. **SSR 兼容**：通过 `import { maybeElementRef } from '@vueuse/core'` 处理服务端渲染[1](@ref)
-4. **TypeScript 支持**：完整类型声明见 `@vueuse/core` 的类型定义文件[1](@ref)[5](@ref)
+3. **SSR 兼容**：通过 `import { maybeElementRef } from '@vueuse/core'` 处理服务端渲染
+4. **TypeScript 支持**：完整类型声明见 `@vueuse/core` 的类型定义文件
 
 ---
 
