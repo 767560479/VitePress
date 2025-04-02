@@ -1,6 +1,6 @@
 ---
 top: 10
-sticky: 1000
+sticky: 100
 sidebar:
   title: 深入剖析 VueUse 的 useMemoize 方法：源码解读与实战应用
   isTimeLine: true
@@ -10,17 +10,10 @@ tags:
   - 前端
   - javascript
   - 源码
-  - vueuse
+  - VueUse
 categories:
   - 前端
 ---
-
-<!--
- * @Description:
- * @Author: zhengfei.tan
- * @Date: 2025-04-01 23:03:06
- * @FilePath: \VitePress\docs\VueuseSource\useMemoize源码解析与实战应用.md
--->
 
 # 深入剖析 VueUse 的 useMemoize 方法：源码解读与实战应用
 

@@ -1,5 +1,5 @@
 ---
-top: 10
+top: 4
 sticky: 1000
 sidebar:
   title: useStorage源码解析
@@ -10,7 +10,7 @@ tags:
   - 前端
   - javascript
   - 源码
-  - vueuse
+  - VueUse
 categories:
   - 前端
 ---
@@ -380,6 +380,7 @@ if (listenToStorageChanges) {
    - 循环引用对象需要特殊处理
 
 4. **框架集成**
+
    ```typescript
    // 在Vuex/Pinia中的使用
    const store = defineStore('main', () => {

@@ -15,13 +15,6 @@ categories:
   - 前端
 ---
 
-<!--
- * @Description:
- * @Author: zhengfei.tan
- * @Date: 2025-03-30 22:38:50
- * @FilePath: \VitePress\docs\VueuseSource\createInjectionState方法解读.md
--->
-
 # 解读 VueUse 中的 `createInjectionState` 方法：从源码到应用
 
 `createInjectionState` 是一个用于创建可注入状态的独特方法。它允许开发者在组件树中共享状态，而无需依赖传统的 `provide/inject` 手动实现。这种方法特别适合需要模块化、可复用的状态管理场景。今天，我们将通过分析其源码，深入理解 `createInjectionState` 的实现原理，并结合实际例子展示它的用法。
