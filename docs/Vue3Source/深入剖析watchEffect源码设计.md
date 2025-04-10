@@ -15,7 +15,7 @@ categories:
   - 前端
 ---
 
-# 深入剖析 watchEffect 源码设计
+# 深入剖析watchEffect源码设计
 
 在 Vue3 的响应式系统中，`watchEffect`是一个能够自动追踪依赖并执行副作用的神奇函数。本文将带您深入源码，解析其背后的实现机制。
 

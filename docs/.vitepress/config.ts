@@ -121,7 +121,10 @@ export default defineConfig({
       { text: 'Vue', link: '/05.Vue/index' },
       {
         text: '源码学习',
-        items: [{ text: 'VueUse', link: '/VueuseSource/index' }],
+        items: [
+          { text: 'Vue3', link: '/Vue3Source/index' },
+          { text: 'VueUse', link: '/VueuseSource/index' },
+        ],
       },
       {
         text: '前端技术笔记',
