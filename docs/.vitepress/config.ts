@@ -135,6 +135,7 @@ export default defineConfig({
           { text: 'React', link: '/08.React/index' },
           { text: 'Python', link: '/03.Python/index' },
           { text: 'Git', link: '/04.Git/index' },
+          { text: '算法分析', link: '/leetcode/index' },
         ],
       },
       { text: '笔记', link: '/note/index' },
