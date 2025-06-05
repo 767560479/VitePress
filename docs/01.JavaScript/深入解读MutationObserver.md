@@ -15,8 +15,6 @@ categories:
 
 # 深入解读 MutationObserver
 
-# 深入解读 MutationObserver：掌控 DOM 变化的终极方案
-
 ## 一、DOM 监控的演进历程
 
 ### 1.1 传统监控方案对比
