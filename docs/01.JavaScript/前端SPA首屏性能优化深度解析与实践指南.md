@@ -13,13 +13,6 @@ categories:
   - 前端
 ---
 
-<!--
- * @Description:
- * @Author: zhengfei.tan
- * @Date: 2025-04-01 22:36:00
- * @FilePath: \VitePress\docs\01.JavaScript\SPA首屏性能优化深度解析与实践指南.md
--->
-
 # 前端 SPA 首屏性能优化深度解析与实践指南
 
 **（2025 年 4 月 1 日 更新）**
