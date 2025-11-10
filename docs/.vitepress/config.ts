@@ -101,6 +101,7 @@ const blogTheme = getThemeConfig({
 export default defineConfig({
   // 继承博客主题配置 //
   extends: blogTheme, // 插件 //
+  base: '/',
   title: '记录bug blog',
   description: 'A VitePress Site',
   lastUpdated: true,
