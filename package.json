@@ -34,7 +34,7 @@
     "@sugarat/theme": "0.5.4",
     "element-plus": "2.9.5",
     "moment": "^2.30.1",
-    "pagefind": "^1.3.0",
+    "pagefind": "1.3.0",
     "sass": "1.85.1",
     "tslib": "2.6.2",
     "vite-plugin-vitepress-auto-sidebar": "1.7.1",
