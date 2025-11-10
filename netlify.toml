@@ -1,6 +1,6 @@
 [build]
-  command = "vitepress build doc"
-  publish = "doc/.vitepress/dist"
+  command = "vitepress build docs"
+  publish = "docs/.vitepress/dist"
 
 [build.environment]
   NODE_VERSION = "20"
