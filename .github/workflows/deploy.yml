@@ -1,0 +1,48 @@
+name: Deploy VitePress to Username.github.io
+
+on:
+  # 配置触发条件：当 main 分支有推送时触发。如果您使用 master 或其他分支，请修改此处。
+  push:
+    branches: [ main ]
+  # 允许在 Actions 页面手动触发此工作流
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出当前源代码仓库的代码
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      # 2. 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # 建议使用 18 或更高版本
+          cache: 'npm' # 如果是 pnpm 或 yarn，请相应修改
+
+      # 3. 安装依赖并构建
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run docs:build
+
+      # 4. 部署到 <用户名>.github.io 仓库
+      - name: Deploy to Pages Repository
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # 创建一个具有仓库读写权限的 Personal Access Token (PAT)，
+          # 并在当前源代码仓库的 Settings -> Secrets 中添加为 secret，名称为 PAT_TOKEN。
+          github_token: ${{ secrets.PAT_TOKEN }}
+          # 指定要推送到的目标仓库，格式：<用户名>/<用户名>.github.io
+          external_repository: 767560479/767560479.github.io
+          # 发布分支，对于 <用户名>.github.io 仓库，通常是 main 分支（旧仓库可能是 master）
+          publish_branch: main
+          # 构建输出目录，请根据您的 VitePress 配置确认
+          publish_dir: docs/.vitepress/dist
+          # 可选：每次部署都保留历史记录，设置为 false 则强制推送
+          force_orphan: true
+          # 可选：此次部署的提交信息
+          commit_message: ${{ github.event.head_commit.message }} - Deployed via GitHub Actions
