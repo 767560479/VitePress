@@ -21,13 +21,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20' # 建议使用 18 或更高版本
-          cache: 'npm' # 如果是 pnpm 或 yarn，请相应修改
 
       # 3. 安装依赖并构建
-      - name: Install and Build
-        run: |
-          npm ci
-          npm run docs:build
+      - name: Install dependencies
+        run: npm install  # 使用 npm install 而不是 npm ci
+
+      - name: Build with VitePress
+        run: npm run docs:build
 
       # 4. 部署到 <用户名>.github.io 仓库
       - name: Deploy to Pages Repository
