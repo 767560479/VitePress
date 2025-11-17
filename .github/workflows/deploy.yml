@@ -1,4 +1,4 @@
-name: Deploy VitePress to Username.github.io
+name: Deploy VitePress to 767560479.github.io
 
 on:
   # 配置触发条件：当 main 分支有推送时触发。如果您使用 master 或其他分支，请修改此处。
@@ -10,6 +10,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 对仓库内容有写入权限，例如推送代码
+      pages: write      # 专门用于 GitHub Pages 的写入权限
+      id-token: write   # 用于获取 OIDC 令牌，以便与云服务等进行安全认证
 
     steps:
       # 1. 检出当前源代码仓库的代码
