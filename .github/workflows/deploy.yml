@@ -43,6 +43,6 @@ jobs:
           # 构建输出目录，请根据您的 VitePress 配置确认
           publish_dir: docs/.vitepress/dist
           # 可选：每次部署都保留历史记录，设置为 false 则强制推送
-          force_orphan: true
+          force_orphan: false
           # 可选：此次部署的提交信息
           commit_message: ${{ github.event.head_commit.message }} - Deployed via GitHub Actions
