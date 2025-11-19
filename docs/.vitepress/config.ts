@@ -137,6 +137,7 @@ export default defineConfig({
           { text: 'Python', link: '/03.Python/index' },
           { text: 'Git', link: '/04.Git/index' },
           { text: '算法分析', link: '/leetcode/index' },
+          { text: '计算机', link: '/computer/index'}
         ],
       },
       { text: '笔记', link: '/note/index' },
