@@ -1,4 +1,5 @@
 # 02.NodeJs
+- [八股文](./八股文.md)
 - [使用 GitHubActions 实现全自动签到任务](./使用GitHubActions实现全自动签到任务.md)
 - [解决内网环境下 NPM 间接依赖版本缺失问题指南](./解决内网环境下NPM间接依赖版本缺失问题指南.md)
 - [node_modules 删除难题](./node_modules删除难题.md)
