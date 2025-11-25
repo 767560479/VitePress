@@ -120,6 +120,7 @@ export default defineConfig({
       { text: '主页', link: '/' },
       { text: 'JavaScript', link: '/01.JavaScript/index' },
       { text: 'Vue', link: '/05.Vue/index' },
+      { text: 'C#', link: '/C#/index' },
       {
         text: '源码学习',
         items: [
