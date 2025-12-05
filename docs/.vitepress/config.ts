@@ -122,6 +122,9 @@ export default defineConfig({
       { text: 'Vue', link: '/05.Vue/index' },
       { text: 'C#', link: '/C#/index' },
       {
+        text: 'Java', link: '/Java/index',
+      },
+      {
         text: '源码学习',
         items: [
           { text: 'Vue3', link: '/Vue3Source/index' },
