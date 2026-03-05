@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress'
+import fs from 'fs'
+import path from 'path'
 import AutoIndex from './vitepress-plugin-auto-index/index'
 import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
@@ -107,6 +109,18 @@ export default defineConfig({
   lastUpdated: true,
   markdown: {
     lineNumbers: true, //md 加行号
+  },
+  // 使用文件的 mtime 覆盖默认的 Git 提交时间
+  transformPageData (pageData) {
+    try {
+      const docsRoot = path.resolve(process.cwd(), 'docs')
+      const filePath = path.join(docsRoot, pageData.relativePath || '')
+      const stat = fs.statSync(filePath)
+      // VitePress 使用时间戳（毫秒）存储 lastUpdated
+      pageData.lastUpdated = +stat.mtime
+    } catch {
+      // 失败时保持 VitePress 默认行为
+    }
   },
   themeConfig: {
     aside: true,
