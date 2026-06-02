@@ -1,4 +1,4 @@
-# SSH 密钥访问 GitHub/GitLab
+# SSH 密钥访问 GitHub/GitLab/gitee
 
 首次使用配置全局用户名/邮箱：
 
