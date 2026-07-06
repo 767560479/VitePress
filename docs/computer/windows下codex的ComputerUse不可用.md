@@ -11,6 +11,16 @@ categories:
 
 先诊断，确认问题不是配置项，而是 bundled 插件缓存半更新：`openai-bundled` 的 marketplace 和 `chrome` / `computer-use` cache 缺失。然后备份 `.codex` 关键文件，停止插件进程，从 Codex 安装目录里的 bundled 插件源重新复制 marketplace，重建插件 cache 和 `latest` junction。中途发现 Windows 目录带了 EFS 加密属性，导致 `Copy-Item` 报 “The specified file could not be encrypted”，所以改用 `robocopy /COPY:DAT` 并对新建的 bundled 插件目录移除加密属性。最后验证 `marketplace.json` 可解析、Chrome/Computer Use 插件文件存在、native host 没有指向 `.tmp` 或 `latest` 的坏路径。
 
+先让 codex 自行修复
+
+```
+修复一下codex的computer-use插件无法运行的问题
+```
+
+不行再删除 .tmp
+
+最后
+
 在 Codex 用，可以直接复制下面这段提示词：
 
 ````text
